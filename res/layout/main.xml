@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/title"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/darkgreen" />
+        <EditText
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:ems="10" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/description"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/darkgreen" />
+        <EditText
+            android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textMultiLine" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/category"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/darkgreen" />        <Spinner
+            android:id="@+id/category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/categoryList"
+            android:prompt="@string/category" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/status"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/darkgreen" />
+        <Spinner
+            android:id="@+id/status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/statusList"
+            android:prompt="@string/status" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/lonlat"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/darkgreen" />
+
+            <LinearLayout android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/lon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:inputType="text"
+                    android:ems="10" />
+
+                <EditText
+                    android:id="@+id/lat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:inputType="text"
+                    android:ems="10" />
+
+                <ImageButton
+                    android:id="@+id/gpsButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:contentDescription="@string/coordsFromGPS"
+                    android:onClick="getCoordinates"
+                    android:src="@drawable/ic_action_location_found"
+                    style="?android:attr/borderlessButtonStyle" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/start_datetime"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/darkgreen" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <EditText
+                android:id="@+id/starttime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:layout_weight="1"
+                android:inputType="time" />
+
+            <EditText
+                android:id="@+id/startdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="date" />
+
+            <ImageButton
+                android:id="@+id/accStartButton"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:contentDescription="@string/currentDateTime"
+                android:onClick="getCurrentStartTime"
+                android:src="@drawable/ic_action_refresh"
+                style="?android:attr/borderlessButtonStyle" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/datetime"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/darkgreen" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <EditText
+                android:id="@+id/time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:layout_weight="1"
+                android:inputType="time" />
+
+            <EditText
+                android:id="@+id/date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="date" />
+
+            <ImageButton
+                    android:id="@+id/accTimeButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:contentDescription="@string/currentDateTime"
+                    android:onClick="getCurrentTime"
+                    android:src="@drawable/ic_action_refresh"
+                    style="?android:attr/borderlessButtonStyle" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/picture"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/darkgreen" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="128dp" >
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="0dp"
+                android:layout_height="128dp"
+                android:layout_weight="1"
+                android:contentDescription="@string/imageViewDesc"
+                android:visibility="visible" />
+
+            <ImageButton
+                android:id="@+id/cameraButton"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/cameraButtonDesc"
+                android:onClick="takePicture"
+                android:src="@drawable/ic_action_camera" />
+        </LinearLayout>
+
+        <LinearLayout android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            style="?android:attr/buttonBarStyle" >
+
+            <Button
+                android:id="@+id/submit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onSubmitClick"
+                android:layout_weight="1"
+                android:text="@string/submitButton"
+                style="?android:attr/buttonBarButtonStyle" />
+
+            <!-- <Button
+                android:id="@+id/submitSMS"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onSubmitClick"
+                android:layout_weight="1"
+                android:text="@string/submitSMS"
+                style="?android:attr/buttonBarButtonStyle" /> -->
+
+            <Button
+                android:text="@string/clearButton"
+                android:id="@+id/clear"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:onClick="clearForm"
+                android:layout_weight="1"
+                style="?android:attr/buttonBarButtonStyle" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

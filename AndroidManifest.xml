@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cz.hsrs.hsform"
+    android:versionCode="3"
+    android:versionName="1.2" >
+
+    <uses-sdk android:minSdkVersion="11" android:targetSdkVersion="19"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-feature android:name="android.hardware.camera"
+                  android:required="true" />
+
+    <application
+        android:icon="@android:drawable/ic_menu_edit"
+
+        android:allowBackup="true"
+        android:theme="@style/PPRDTheme">
+
+        <activity
+            android:name=".activity.HsFormActivity"
+            android:logo="@drawable/pprd_logo"
+            android:label="@string/shortAppName"
+            android:screenOrientation="portrait">
+
+            <intent-filter
+                android:label="@string/appName">
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <!-- umozni zpracovat lokaci -->
+            <intent-filter>
+                  <action android:name="android.intent.action.ON_LOCATION_RECEIVE" />
+                  <category android:name="android.intent.category.DEFAULT" />
+               </intent-filter>
+
+            <!-- z Locusu v kontext. menu bodu -->
+            <intent-filter>
+                <action android:name="locus.api.android.INTENT_ITEM_POINT_TOOLS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <!-- v seznamu fci locusu -->
+            <!--<intent-filter>
+                   <action android:name="menion.android.locus.MAIN_FUNCTION" />
+                   <category android:name="android.intent.category.DEFAULT" />
+               </intent-filter>-->
+            <intent-filter>
+                 <action android:name="locus.api.android.INTENT_ITEM_MAIN_FUNCTION" />
+                 <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <intent-filter>
+                 <action android:name="locus.api.android.INTENT_ITEM_SEARCH_LIST" />
+                 <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".activity.SettingActivity"
+            android:label="@string/action_settings"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <activity
+            android:name=".activity.About"
+            android:label="@string/appName"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <activity
+            android:name=".activity.error.CrashActivity"
+            android:label="@string/appName"
+            android:screenOrientation="portrait" >
+        </activity>
+
+     </application>
+
+</manifest>

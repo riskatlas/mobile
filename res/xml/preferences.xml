@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <EditTextPreference
+        android:key="@string/pref_url_key"
+        android:title="@string/pref_url_title"
+        android:summary="@string/pref_url_summ"
+        android:defaultValue="@string/pref_url_default" />
+
+    <EditTextPreference
+        android:key="@string/pref_user_key"
+        android:title="@string/pref_user_title"
+        android:summary="@string/pref_user_summ"
+        android:defaultValue="@string/pref_user_default" />
+
+    <EditTextPreference
+        android:key="@string/pref_pass_key"
+        android:title="@string/pref_pass_title"
+        android:summary="@string/pref_pass_summ"
+        android:inputType="textPassword" />
+
+    <EditTextPreference
+        android:key="@string/pref_certpass_key"
+        android:title="@string/pref_certpass_title"
+        android:summary="@string/pref_certpass_summ"
+        android:inputType="textPassword" />
+
+</PreferenceScreen>
